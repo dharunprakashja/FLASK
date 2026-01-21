@@ -1,25 +1,16 @@
-from flask import Flask,render_template,request
+from flask import Flask
+from models import db
+from flask_migrate import Migrate
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Dharun@29042005@localhost/flask_db'
+app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
+db.init_app(app)
+migrate = Migrate(app,db)
 
-@app.route("/")
-def hello():
-    return "HELLO FLASK"
+@app.route('/')
+def server():
+    return "DATABASE SERVER"
 
-@app.route("/home")
-def home():
-    return render_template("home.html")
-
-@app.route('/contact/')
-def contact():
-    print(request.args)
-    print(request.args['name'])
-    print(request.args.get('age'))
-    return render_template("contact.html")
-
-@app.route('/about/<int:age>')
-def about(age):
-    print("AGE",age)
-    return render_template("about.html")
-
-if(__name__ == '__main__'):
-    app.run(port=8000,debug=True)
+if(__name__=="__main__"):
+    app.run(debug=True)

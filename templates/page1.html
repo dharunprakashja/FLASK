@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>PAGE 1</h1>
+    <img src="{{ url_for('static',filename='image/d.jpg')}}">
+
+<div class="card" style="width: 18rem;">
+  <img src="{{url_for('static',filename='image/d.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+{% endblock %}

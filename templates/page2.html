@@ -1,0 +1,13 @@
+{% extends 'base.html' %}  
+{% import 'macro.html' as element %} 
+{% block content %}
+
+<h2>PAGE 2</h2>
+{{ element.title("Black") }}
+
+{{ element.input_feild("Username") }}
+{{ element.input_feild(name="Password",type='password',placeholder='Enter password')}}
+
+
+{% endblock %}
+

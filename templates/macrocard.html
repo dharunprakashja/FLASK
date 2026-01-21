@@ -1,0 +1,13 @@
+{% import 'macro.html' as element %}
+{% block contant %}
+
+    <!-- {{element.card("DHAROO","22AD063")}} -->
+    {% call element.card("DHAROO","22AD063") %}
+
+        <ul>
+            <li>python</li>
+            <li>java</li>
+            <li>javascript</li>
+        </ul>
+    {% endcall %}
+{% endblock %}  

@@ -1,0 +1,21 @@
+{% macro title(nam) %}
+    <h1>{{nam}} page</h1>
+{% endmacro %}
+
+{% macro input_feild(name,type = 'text',placeholder = "") %}
+<label for=""> {{ name | title }}</label>
+<input type="{{ type }}" name = "{{ name}}" placeholder="{{ placeholder}}">
+{% endmacro %}
+
+{% macro card(name, rollno) %}
+    <div>
+        <h1>Name: {{ name }}</h1>
+        <h1>Roll no: {{ rollno }}</h1>
+        {% if caller is defined %}
+        <div>
+            <h1>Projects:</h1>
+            {{caller()}}
+        </div>
+        {% endif %}
+    </div>
+{% endmacro %}

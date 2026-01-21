@@ -7,6 +7,26 @@
 </head>
 <body>
     <h1>This is a home page</h1>
+    <h1>{{language}}</h1>
+    <h1>{{numbers}}</h1>
+    <div>
+        {% for n in numbers %}
+        <p>The number is {{n}}</p>
+        {% endfor %}
+    </div>
+
+    {% if (language == "Python")%}
+    <p>This is python</p>
+    {% elif (language == "java")%}
+    <p>This is java</p>
+    {% else %}
+    <p>NO programming language found</p>
+
+    {% include 'include.html' %}
+
+    {% endif%}
+
+    
     
 </body>
 </html>

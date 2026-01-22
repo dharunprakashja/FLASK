@@ -2,6 +2,20 @@ POST http://localhost:5000/form
 Content-Type: application/json
 
 {
-    "name": "Dharoo",
-    "age": 12
+    "name": "gayatri",
+    "age": 21
 }
+####
+GET http://localhost:5000/table
+
+###
+POST  http://localhost:5000/edit/2
+Content-Type: application/json
+
+{
+    "name":"GOWTHAM",
+    "age":200
+}
+
+###
+DELETE http://localhost:5000/delete/7

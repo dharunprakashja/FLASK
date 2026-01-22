@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <div>
+    <h1 class="card-text"> TABLE </h1>
+</div> -->
+<div>
+
+</div>
+<div class="container">
+        <a href="{{ url_for('form')}}">
+    <button class="btn btn-primary" style="justify-content: end;margin-top: 10px;">ADD DATA</button>
+    </a>
+    <table class="table" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in details %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.age}}</td>
+                <td>
+                    <a href="{{ url_for('edit',id=d.id)}}">
+                        <button class="btn btn-danger">EDIT</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url_for('delete',id=d.id)}}"> <button class="btn btn-primary">DELETE</button> </a>
+                    </td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

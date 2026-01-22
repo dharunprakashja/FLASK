@@ -1,0 +1,7 @@
+POST http://localhost:5000/form
+Content-Type: application/json
+
+{
+    "name": "Dharoo",
+    "age": 12
+}
